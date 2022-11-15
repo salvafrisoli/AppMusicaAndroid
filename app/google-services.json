@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "837899865173",
+    "project_id": "fir-signin-ab365",
+    "storage_bucket": "fir-signin-ab365.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837899865173:android:818e1cf896f19d5005d8dc",
+        "android_client_info": {
+          "package_name": "com.example.appmusica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837899865173-00o06svn0c3o1ese264l9ag8goh0j3kj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appmusica",
+            "certificate_hash": "05729495fc134bea23db91af45b3eb77704e5cc9"
+          }
+        },
+        {
+          "client_id": "837899865173-lecrkd4q429792s72n11aj328rsine6o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb8Zr7NuDiHmds_sSHsu3HJGn8TTBgcPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837899865173-lecrkd4q429792s72n11aj328rsine6o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
