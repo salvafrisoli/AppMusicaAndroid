@@ -4,11 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appmusica.Inicial
 
 import com.example.appmusica.MusicaResponse
 import com.example.appmusica.R
 
-class MusicaAdapter(var items: MutableList<MusicaResponse>, context: Context) : RecyclerView.Adapter<MusicaViewHolder>() {
+class MusicaAdapter(var items: Inicial, context: Context) : RecyclerView.Adapter<MusicaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicaViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -17,13 +18,14 @@ class MusicaAdapter(var items: MutableList<MusicaResponse>, context: Context) : 
     }
 
     override fun onBindViewHolder(holder: MusicaViewHolder, position: Int) {
-        holder.cancion.text = items[position].cancion
-        holder.artista.text = items [position].artista
+//        holder.cancion.text = items.Response.hits[position].cancion
+        holder.cancion.text = items.response.hits[position].cancion
+        holder.cancion.text = items.response.hits[position].artista
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = items.response.hits.size
 
-    fun Update(items_new: MutableList<MusicaResponse>){
+    fun Update(items_new: Inicial){
         items = items_new
         this.notifyDataSetChanged()
     }

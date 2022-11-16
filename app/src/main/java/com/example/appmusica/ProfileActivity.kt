@@ -28,7 +28,7 @@ class ProfileActivity : AppCompatActivity(){
 
     private lateinit var rvMusica : RecyclerView
 
-    private var canciones = ArrayList<MusicaResponse>()
+    private var canciones = ArrayList<Inicial>()
     private lateinit var adapter: MusicaAdapter
 
 
