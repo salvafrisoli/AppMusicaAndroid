@@ -8,24 +8,24 @@ import com.example.appmusica.Inicial
 
 import com.example.appmusica.MusicaResponse
 import com.example.appmusica.R
+import com.example.appmusica.ResultAPI
 
-class MusicaAdapter(var items: Inicial, context: Context) : RecyclerView.Adapter<MusicaViewHolder>() {
+class MusicaAdapter(var items: MutableList<ResultAPI>, context: Context) : RecyclerView.Adapter<MusicaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicaViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return MusicaViewHolder(layoutInflater.inflate(R.layout.item_musica, parent, false))
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_musica, parent, false)
+        return MusicaViewHolder(view)
         
     }
 
     override fun onBindViewHolder(holder: MusicaViewHolder, position: Int) {
-//        holder.cancion.text = items.Response.hits[position].cancion
-        holder.cancion.text = items.response.hits[position].cancion
-        holder.cancion.text = items.response.hits[position].artista
+        holder.cancion.text = items[position].result.cancion
+        holder.artista.text = items[position].result.artista
     }
 
-    override fun getItemCount(): Int = items.response.hits.size
+    override fun getItemCount(): Int = items.size
 
-    fun Update(items_new: Inicial){
+    fun Update(items_new: MutableList<ResultAPI>){
         items = items_new
         this.notifyDataSetChanged()
     }

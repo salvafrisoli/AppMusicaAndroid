@@ -7,8 +7,13 @@ data class MusicaResponse(
     @SerializedName("artist_names") var artista: String
 
 )
+
+data class ResultAPI(
+    var result: MusicaResponse
+)
+
 data class Response(
-    var hits: ArrayList<MusicaResponse>
+    var hits: ArrayList<ResultAPI>
 )
 data class Inicial(
     var response: Response
