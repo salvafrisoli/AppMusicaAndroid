@@ -8,8 +8,8 @@ import retrofit2.http.Query
 import retrofit2.http.Url
 
 interface ApiService {
-    @Headers("Accept: application/json", "Authorization: Bearer CwQ4MJW2gVIG3BaDVxrvlGs_Kz12u-1ZnbS2YueLjqv4Mkl9QjMQSnFX0FGHJYTd")
+    @Headers("Authorization: Bearer CwQ4MJW2gVIG3BaDVxrvlGs_Kz12u-1ZnbS2YueLjqv4Mkl9QjMQSnFX0FGHJYTd")
     @GET("/search")
-    fun getSongsByName(@Query("cancion") cancion: String) : Call<ArrayList<MusicaResponse>>
+    fun getSongsByName(@Query("q") cancion: String) : Call<Inicial>
     //suspend fun getSongsByName(@Url url:String): Call<ArrayList<MusicaResponse>>
 }

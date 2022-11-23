@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "837899865173-ajeinhnv30bnm7908sevhnflo4aqg1rs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appmusica",
+            "certificate_hash": "76897ba319c5821f4d3140570d5eca7249e9060c"
+          }
+        },
+        {
           "client_id": "837899865173-lecrkd4q429792s72n11aj328rsine6o.apps.googleusercontent.com",
           "client_type": 3
         }
