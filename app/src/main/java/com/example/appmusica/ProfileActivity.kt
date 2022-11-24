@@ -32,23 +32,6 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
     private var canciones = ArrayList<ResultAPI>()
     private lateinit var adapter: MusicaAdapter
 
-    //    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        binding = ActivityProfileBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//        initRecyclerView()
-//        binding.svMusica.setOnQueryTextListener(this)
-//
-//        iniciar firebase auth
-//        firebaseAuth = FirebaseAuth.getInstance()
-//        checkUser()
-//
-//        //click logout user
-//        binding.logoutBtn.setOnClickListener{
-//            firebaseAuth.signOut()
-//            checkUser()
-//        }
-//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +61,12 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
         adapter = MusicaAdapter(canciones, this)
         binding.rvMusica.layoutManager = LinearLayoutManager(this)
         binding.rvMusica.adapter = adapter
+
+        adapter.onItemClick ={
+            val intent = Intent(this, DetalleActivity::class.java)
+            intent.putExtra("musica",it)
+            startActivity(intent)
+        }
     }
 
     private fun getRetrofit(): Retrofit {
@@ -99,7 +88,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
                     adapter.notifyDataSetChanged()
 
                 } else {
-                    Log.d("ProfileActivity","EROR >:(" )
+                    Log.d("ProfileActivity","ERROR >:(" )
                     showError()
                 }
             }
@@ -150,42 +139,3 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
         return true
     }
 }
-//    private fun checkUser() {
-//        //obtener current user
-//        val firebaseUser = firebaseAuth.currentUser
-//        if(firebaseUser == null) {
-//            //user not logged in
-//            startActivity(Intent(this, MainActivity::class.java))
-//            finish()
-//        }
-//        else{
-//            val email = firebaseUser.email
-//            binding.emailTv.text = email
-//        }
-//    }
-//class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
-
-//viewbinding
-//    private lateinit var binding: ActivityProfileBinding
-//    private lateinit var adapter: MusicaAdapter
-//    private val musicaCanciones = mutableListOf<MusicaResponse>()
-//
-//    private lateinit var firebaseAuth: FirebaseAuth
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        binding = ActivityProfileBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-//        initRecyclerView()
-//        binding.svMusica.setOnQueryTextListener(this)
-//
-//        iniciar firebase auth
-//        firebaseAuth = FirebaseAuth.getInstance()
-//        checkUser()
-//
-//        //click logout user
-//        binding.logoutBtn.setOnClickListener{
-//            firebaseAuth.signOut()
-//            checkUser()
-//        }
-//    }

@@ -12,6 +12,8 @@ import com.example.appmusica.ResultAPI
 
 class MusicaAdapter(var items: MutableList<ResultAPI>, context: Context) : RecyclerView.Adapter<MusicaViewHolder>() {
 
+    var onItemClick : ((ResultAPI) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_musica, parent, false)
         return MusicaViewHolder(view)
@@ -22,6 +24,10 @@ class MusicaAdapter(var items: MutableList<ResultAPI>, context: Context) : Recyc
         holder.cancion.text = items[position].result.cancion
         holder.artista.text = items[position].result.artista
         holder.bind(items[position].result.fotoCancion)
+
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(items[position])
+        }
     }
 
     override fun getItemCount(): Int = items.size
