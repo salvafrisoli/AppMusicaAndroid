@@ -21,6 +21,7 @@ class MusicaAdapter(var items: MutableList<ResultAPI>, context: Context) : Recyc
     override fun onBindViewHolder(holder: MusicaViewHolder, position: Int) {
         holder.cancion.text = items[position].result.cancion
         holder.artista.text = items[position].result.artista
+        holder.bind(items[position].result.fotoCancion)
     }
 
     override fun getItemCount(): Int = items.size

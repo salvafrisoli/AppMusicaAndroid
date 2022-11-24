@@ -4,7 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class MusicaResponse(
     @SerializedName("full_title") var cancion: String,
-    @SerializedName("artist_names") var artista: String
+    @SerializedName("artist_names") var artista: String,
+    @SerializedName("song_art_image_thumbnail_url") var fotoCancion: String
 
 )
 
