@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleActivity">
+    tools:context=".DetalleActivity"
+    android:background="#08BBE9">
 
     <ImageView
+        android:layout_marginTop="20dp"
         android:id="@+id/ivDetalleCancion"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -20,11 +22,106 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#0092B7"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivDetalleCancion" />
+        app:layout_constraintTop_toBottomOf="@+id/ivDetalleCancion"
+        android:paddingLeft="40dp"
+        />
+    <TextView
+        android:id="@+id/tvDetalleArtista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalleCancion"
+        android:paddingLeft="40dp"
+        />
+    <TextView
+        android:id="@+id/tvTituloFechaSalida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="Fecha de salida:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalleArtista"
+        android:paddingLeft="40dp"
+        />
+    <TextView
+        android:id="@+id/tvDetalleFechaSalida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintHorizontal_bias="0.2"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTituloFechaSalida"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetalleArtista"
+        />
+    <TextView
+        android:id="@+id/tvTituloLinkLyrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Letra de la cancion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaSalida"
+        />
+    <TextView
+        android:id="@+id/tvDetalleLinkLyrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloLinkLyrics"
+        />
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:id="@+id/ivDetalleAlbum"
+        app:layout_constraintHorizontal_bias="0.8"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        />
+    <TextView
+        android:id="@+id/tvTituloAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textColor="@color/white"
+        android:text="Album/Portada"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivDetalleAlbum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="90dp"
+
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

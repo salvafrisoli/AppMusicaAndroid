@@ -5,12 +5,19 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class MusicaResponse(
-    @SerializedName("full_title") var cancion: String,
+    @SerializedName("title") var cancion: String,
     @SerializedName("artist_names") var artista: String,
-    @SerializedName("song_art_image_thumbnail_url") var fotoCancion: String
+    @SerializedName("song_art_image_thumbnail_url") var fotoCancion: String,
+    @SerializedName("release_date_with_abbreviated_month_for_display") var fechaSalida: String,
+    @SerializedName("header_image_thumbnail_url") var fotoAlbum: String,
+    @SerializedName("url") var lyricsLink: String
+
 
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
+        parcel.readString()!!,
+        parcel.readString()!!,
+        parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!
@@ -21,6 +28,9 @@ data class MusicaResponse(
         parcel.writeString(cancion)
         parcel.writeString(artista)
         parcel.writeString(fotoCancion)
+        parcel.writeString(fechaSalida)
+        parcel.writeString(fotoAlbum)
+        parcel.writeString(lyricsLink)
     }
 
     override fun describeContents(): Int {

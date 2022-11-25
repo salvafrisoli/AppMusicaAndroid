@@ -18,7 +18,7 @@ class API {
             .build()
         val api = retrofit.create(ApiService::class.java)
 
-        val result = api.getSongsByName("eminem").execute()
+        val result = api.getSongsByName("duki").execute()
 
         return if (result.isSuccessful) {
             Log.d("API-DEMO", "Successfull")
