@@ -108,15 +108,16 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
     }
 
     fun start(context: Context) {
-        scope.launch {
-            canciones = Repository().fetchData(context)
-            Log.d("API-DEMO", canciones.size.toString())
-            Log.d("API-DEMO", canciones[1].result.cancion)
-            withContext(Dispatchers.Main) {
-                adapter.Update(canciones)
-                progressDialog.stop()
-            }
-        }
+//        scope.launch {
+//            canciones = Repository().fetchData(context)
+//            Log.d("API-DEMO", canciones.size.toString())
+//            Log.d("API-DEMO", canciones[1].result.cancion)
+//            withContext(Dispatchers.Main) {
+//                adapter.Update(canciones)
+             progressDialog.stop()
+//            }
+//        }
+        Log.d("hola","hola")
     }
 
     private fun checkUser() {
