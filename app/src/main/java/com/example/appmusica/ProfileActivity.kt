@@ -78,7 +78,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
             .build()
     }
     private fun searchByName(query:String){
-        progressDialog.start("Recuperando Datos...")
+        progressDialog.start("Buscando...")
         CoroutineScope(Dispatchers.IO).launch {
 
             val llamada = getRetrofit().create(ApiService::class.java).getSongsByName("$query").execute()
@@ -103,7 +103,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
 
     override fun onStart() {
         super.onStart()
-        progressDialog.start("Recuperando Datos...")
+        progressDialog.start("Cargando...")
         start(this)
     }
 
