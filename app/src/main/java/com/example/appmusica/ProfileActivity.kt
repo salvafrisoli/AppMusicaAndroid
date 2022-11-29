@@ -32,6 +32,8 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
     private var canciones = ArrayList<ResultAPI>()
     private lateinit var adapter: MusicaAdapter
 
+    private val progressDialog by lazy { CustomProgressDialog(this)}
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +78,9 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
             .build()
     }
     private fun searchByName(query:String){
+        progressDialog.start("Recuperando Datos...")
         CoroutineScope(Dispatchers.IO).launch {
+
             val llamada = getRetrofit().create(ApiService::class.java).getSongsByName("$query").execute()
             val songs = llamada.body()!!.response.hits
             runOnUiThread{
@@ -86,6 +90,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
                     val songArtist = songs?: emptyList()
                     canciones.addAll(songs)
                     adapter.notifyDataSetChanged()
+                    progressDialog.stop()
 
                 } else {
                     Log.d("ProfileActivity","ERROR >:(" )
@@ -98,6 +103,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
 
     override fun onStart() {
         super.onStart()
+        progressDialog.start("Recuperando Datos...")
         start(this)
     }
 
@@ -108,6 +114,7 @@ class ProfileActivity : AppCompatActivity(), OnQueryTextListener {
             Log.d("API-DEMO", canciones[1].result.cancion)
             withContext(Dispatchers.Main) {
                 adapter.Update(canciones)
+                progressDialog.stop()
             }
         }
     }
